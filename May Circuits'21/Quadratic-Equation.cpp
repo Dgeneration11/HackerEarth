@@ -4,26 +4,26 @@ using namespace std;
 
 
 int main(){
-    ll l,r,b,c,count=0,a=0;
+    ll l,r,c,count=0,a=0;
     int t;
     cin>>t;
     while(t--){
         cin>>l>>r;
-
-        for(int i=sqrt(l); i<=r/2; b++){
+        count = 0;
+        for(int i=sqrt(l); i<=r/2+1; i++){
             if(i*i >= 1){
-                count = count + sqrt(i*i-1) + 1;
+                count = count + sqrt(i*i-l) + 1;
                 if(i*i>=r){
-                    a = sqrt(b*b-r);
-                    if(a*a == b*b - r){
+                    a = sqrt(i*i-r);
+                    if(a*a == i*i - r){
                         count = count - a;
                     }
                     else{
-                        count = count-a-1;
+                        count = count - a - 1;
                     }
                 }
             }
         }
-        cout<<count;
+        cout<<count<<endl;
     }    
 }
