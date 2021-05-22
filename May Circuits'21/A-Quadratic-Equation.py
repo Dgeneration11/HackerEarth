@@ -31,5 +31,6 @@ for test in range(T):
         count = count + (p2-p1)
         if (p1 != 0):
             count = count + 1
-
     print(count)
+
+
